@@ -1,1 +1,6 @@
-<h1>Why are you running?</h1>
+<h1>All my lists!</h1>
+<%= link_to "Create New List", new_list_path %>
+<% @lists.each do |list| %>
+  <h2 class="card p-5"><%= list.name %></h2>
+  <%= link_to "Show list", list_path(list) %>
+ <% end %>
