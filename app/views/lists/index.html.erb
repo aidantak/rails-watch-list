@@ -1,6 +1,18 @@
-<h1>All my lists!</h1>
-<%= link_to "Create New List", new_list_path %>
-<% @lists.each do |list| %>
-  <h2 class="card p-5"><%= list.name %></h2>
-  <%= link_to "Show list", list_path(list) %>
- <% end %>
+<div class="container">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80);">
+    <div class="container">
+      <h1>Your favourite list repository 🍿🎉</h1>
+      <span class="btn btn-dark"><%= link_to "Create New List", new_list_path %></span>
+    </div>
+  </div>
+
+
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1483519173755-be893fab1f46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1208&q=80)">
+        <h2><%= list.name %></h2>
+        <span type="button" class="btn btn-dark"><%= link_to "Show list", list_path(list) %></span>
+      </div>
+    <% end %>
+  </div>
+</div>
